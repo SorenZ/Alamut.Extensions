@@ -1,4 +1,7 @@
-﻿using System;
+﻿// ReSharper disable ClassTooBig
+// ReSharper disable MethodNameNotMeaningful
+
+using System;
 using Microsoft.AspNetCore.Http;
 
 namespace Alamut.Extensions.Session
