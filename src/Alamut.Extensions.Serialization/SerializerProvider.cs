@@ -6,7 +6,8 @@ namespace Alamut.Extensions.Serialization
     {
         static SerializerProvider()
         {
-            Default = new MessagePackSerializer();
+            //Default = new MessagePackSerializer();
+            Default = new NewtonsoftJsonSerializer();
         }
 
         public static ISerializer Default { get; }
