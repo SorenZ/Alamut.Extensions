@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 using Microsoft.Extensions.Caching.Distributed;
 
-using MessagePack;
-using MessagePack.Resolvers;
+using Alamut.Extensions.Caching.Serialization;
 
 
 namespace Alamut.Extensions.Caching.Distributed
 {
     public static class DistributedCacheRefTypeExtensions
     {
-        static DistributedCacheRefTypeExtensions()
-        {
-            CompositeResolver.RegisterAndSetAsDefault(
-            new[] { NativeDateTimeResolver.Instance, ContractlessStandardResolver.Instance });
-        }
-
+        private static ISerializer Serializer => SerializerProvider.Default;
+        
         public static void Set<T>(this IDistributedCache cache,
             string key,
             T value,
             DistributedCacheEntryOptions options)
         {
-            cache.Set(key, MessagePackSerializer.Serialize(value), options);
+            cache.Set(key, Serializer.Serialize(value), options);
         }
 
         public static T Get<T>(this IDistributedCache cache, string key) where T : class
@@ -34,7 +29,7 @@ namespace Alamut.Extensions.Caching.Distributed
 
             return val == null
                 ? null
-                : MessagePackSerializer.Deserialize<T>(val);
+                : Serializer.Deserialize<T>(val);
         }
 
         public static async Task SetAsync<T>(this IDistributedCache cache,
@@ -52,7 +47,7 @@ namespace Alamut.Extensions.Caching.Distributed
             CancellationToken token = default)
         {
             await cache.SetAsync(key,
-                MessagePackSerializer.Serialize(value),
+                Serializer.Serialize(value),
                 options,
                 token);
         }
@@ -64,7 +59,7 @@ namespace Alamut.Extensions.Caching.Distributed
 
             return val == null
                 ? null
-                : MessagePackSerializer.Deserialize<T>(val);
+                : Serializer.Deserialize<T>(val);
 
         }
 
@@ -78,7 +73,7 @@ namespace Alamut.Extensions.Caching.Distributed
                 return false;
             }
 
-            returnValue = MessagePackSerializer.Deserialize<T>(val);
+            returnValue = Serializer.Deserialize<T>(val);
 
             return true;
         }
@@ -93,7 +88,7 @@ namespace Alamut.Extensions.Caching.Distributed
                 return (false, default(T));
             }
 
-            var value = MessagePackSerializer.Deserialize<T>(val);
+            var value = Serializer.Deserialize<T>(val);
 
             return (true, value);
         }
