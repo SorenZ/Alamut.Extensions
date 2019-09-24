@@ -1,3 +1,6 @@
+// ReSharper disable TooManyArguments
+// ReSharper disable MethodNameNotMeaningful
+
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -5,6 +8,7 @@ using Microsoft.Extensions.Caching.Distributed;
 
 using MessagePack;
 using MessagePack.Resolvers;
+
 
 namespace Alamut.Extensions.Caching.Distributed
 {
@@ -53,9 +57,10 @@ namespace Alamut.Extensions.Caching.Distributed
                 token);
         }
 
-        public static async Task<T> GetAsync<T>(this IDistributedCache cache, string key) where T : class
+        public static async Task<T> GetAsync<T>(this IDistributedCache cache, string key, 
+            CancellationToken token = default) where T : class
         {
-            var val = await cache.GetAsync(key);
+            var val = await cache.GetAsync(key, token);
 
             return val == null
                 ? null
@@ -78,9 +83,11 @@ namespace Alamut.Extensions.Caching.Distributed
             return true;
         }
 
-        public static async Task<(bool exist, T returnValue)> TryGetAsync<T>(this IDistributedCache cache, string key)
+        public static async Task<(bool exist, T returnValue)> TryGetAsync<T>(this IDistributedCache cache, 
+            string key,
+            CancellationToken token = default)
         {
-            var val = await cache.GetAsync(key);
+            var val = await cache.GetAsync(key, token);
             if (val == null)
             {
                 return (false, default(T));

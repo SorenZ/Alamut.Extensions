@@ -1,4 +1,7 @@
-﻿using System;
+﻿// ReSharper disable TooManyArguments
+// ReSharper disable MethodNameNotMeaningful
+
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
