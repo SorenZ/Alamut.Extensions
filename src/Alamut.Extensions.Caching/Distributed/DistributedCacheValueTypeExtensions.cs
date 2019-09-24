@@ -1,5 +1,6 @@
 ﻿// ReSharper disable TooManyArguments
 // ReSharper disable MethodNameNotMeaningful
+// ReSharper disable ClassTooBig
 
 using System;
 using System.Threading;

@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D40D64E2-7025-4E0B-A386-F142A76ED1F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alamut.Extensions.Caching", "src\Alamut.Extensions.Caching\Alamut.Extensions.Caching.csproj", "{B081C410-C586-4368-BA5C-11537E16D6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alamut.Extensions.Caching", "src\Alamut.Extensions.Caching\Alamut.Extensions.Caching.csproj", "{B081C410-C586-4368-BA5C-11537E16D6DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alamut.Extensions.Session", "src\Alamut.Extensions.Session\Alamut.Extensions.Session.csproj", "{F46BB02D-DDB2-48F6-A6FE-DFEFB6BBFA0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alamut.Extensions.Session", "src\Alamut.Extensions.Session\Alamut.Extensions.Session.csproj", "{F46BB02D-DDB2-48F6-A6FE-DFEFB6BBFA0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{52DB98A1-72A3-4E85-9EB4-AF43951B8695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alamut.Extensions.Caching.Test", "test\Alamut.Extensions.Caching.Test\Alamut.Extensions.Caching.Test.csproj", "{44AD5A4B-2BAC-4B71-918B-7C3600915194}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alamut.Extensions.Caching.Test", "test\Alamut.Extensions.Caching.Test\Alamut.Extensions.Caching.Test.csproj", "{44AD5A4B-2BAC-4B71-918B-7C3600915194}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alamut.Extensions.Session.Test", "test\Alamut.Extensions.Session.Test\Alamut.Extensions.Session.Test.csproj", "{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alamut.Extensions.Session.Test", "test\Alamut.Extensions.Session.Test\Alamut.Extensions.Session.Test.csproj", "{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alamut.Extensions.Serialization", "src\Alamut.Extensions.Serialization\Alamut.Extensions.Serialization.csproj", "{C45297C1-13C9-4C59-8192-AEE5FA4727C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B081C410-C586-4368-BA5C-11537E16D6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -76,11 +75,30 @@ Global
 		{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A}.Release|x64.Build.0 = Release|Any CPU
 		{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A}.Release|x86.ActiveCfg = Release|Any CPU
 		{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A}.Release|x86.Build.0 = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|x64.Build.0 = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Debug|x86.Build.0 = Debug|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|x64.ActiveCfg = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|x64.Build.0 = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B081C410-C586-4368-BA5C-11537E16D6DD} = {D40D64E2-7025-4E0B-A386-F142A76ED1F6}
 		{F46BB02D-DDB2-48F6-A6FE-DFEFB6BBFA0A} = {D40D64E2-7025-4E0B-A386-F142A76ED1F6}
 		{44AD5A4B-2BAC-4B71-918B-7C3600915194} = {52DB98A1-72A3-4E85-9EB4-AF43951B8695}
 		{AB4D9203-A4B7-4EA7-8EF7-56BA70C47B5A} = {52DB98A1-72A3-4E85-9EB4-AF43951B8695}
+		{C45297C1-13C9-4C59-8192-AEE5FA4727C4} = {D40D64E2-7025-4E0B-A386-F142A76ED1F6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84D77B63-FBA9-43E3-ADA3-90AD2CA85113}
 	EndGlobalSection
 EndGlobal

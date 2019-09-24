@@ -22,4 +22,8 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Alamut.Extensions.Serialization\Alamut.Extensions.Serialization.csproj" />
+  </ItemGroup>
+
 </Project>

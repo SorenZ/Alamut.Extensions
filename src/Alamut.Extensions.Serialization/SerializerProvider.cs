@@ -1,4 +1,6 @@
-﻿namespace Alamut.Extensions.Caching.Serialization
+﻿using Alamut.Extensions.Serialization.Providers;
+
+namespace Alamut.Extensions.Serialization
 {
     public static class SerializerProvider
     {

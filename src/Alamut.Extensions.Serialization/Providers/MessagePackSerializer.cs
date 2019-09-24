@@ -1,8 +1,6 @@
-﻿using System;
-using MessagePack.Resolvers;
+﻿using MessagePack.Resolvers;
 
-
-namespace Alamut.Extensions.Caching.Serialization
+namespace Alamut.Extensions.Serialization.Providers
 {
     public class MessagePackSerializer : ISerializer
     {

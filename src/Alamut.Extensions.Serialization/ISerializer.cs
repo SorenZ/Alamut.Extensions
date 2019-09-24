@@ -1,4 +1,4 @@
-﻿namespace Alamut.Extensions.Caching.Serialization
+﻿namespace Alamut.Extensions.Serialization
 {
     public interface ISerializer
     {

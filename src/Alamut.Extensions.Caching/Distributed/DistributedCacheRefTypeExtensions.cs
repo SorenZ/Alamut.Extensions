@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Extensions.Caching.Distributed;
 
-using Alamut.Extensions.Caching.Serialization;
+using Alamut.Extensions.Serialization;
 
 
 namespace Alamut.Extensions.Caching.Distributed
