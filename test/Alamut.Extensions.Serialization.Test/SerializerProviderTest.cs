@@ -10,13 +10,13 @@ namespace Alamut.Extensions.Serialization.Test
         public void SerializerProvider_Init_SetDefaultSerializer()
         {
             // arrange
-            var actual = new MessagePackSerializer();
+            var actual = typeof(ISerializer);
             
             // act
             var expected = SerializerProvider.Default;
 
             // assert
-            Assert.Equal(expected.GetType(), actual.GetType());
+            Assert.True(actual.IsInstanceOfType(expected));
         }
 
         [Fact]

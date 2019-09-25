@@ -5,23 +5,28 @@ namespace Alamut.Extensions.Serialization
 {
     public static class SerializerProvider
     {
-        static SerializerProvider()
+        private static readonly Lazy<ISerializer> LazySerializerProvider;
+
+        static SerializerProvider() 
         {
-            SetDefaultSerializer(SerializerProviders.MessagePack);
+            ISerializer InitSerializerFactory() => _default ?? (_default = new MessagePackSerializer());
+
+            LazySerializerProvider = new Lazy<ISerializer>(InitSerializerFactory, false);
         }
 
-        public static ISerializer Default { get; private set; }
+        private static ISerializer _default;
+        public static ISerializer Default => LazySerializerProvider.Value;
 
         public static void SetDefaultSerializer(SerializerProviders provider)
         {
             switch (provider)
             {
                 case SerializerProviders.MessagePack:
-                    Default = new MessagePackSerializer();
+                    _default = new MessagePackSerializer();
                     break;
 
                 case SerializerProviders.NewtonsoftJson:
-                    Default = new NewtonsoftJsonSerializer();
+                    _default = new NewtonsoftJsonSerializer();
                     break;
 
                 default:
@@ -29,7 +34,8 @@ namespace Alamut.Extensions.Serialization
             }
         }
 
-        public static void SetDefaultSerializer(ISerializer customSerializer) => Default = customSerializer;
+        public static void SetDefaultSerializer(ISerializer customSerializer) => _default = customSerializer;
+
     }
 
     public enum SerializerProviders

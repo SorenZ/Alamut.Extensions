@@ -15,6 +15,11 @@ namespace Alamut.Extensions.Serialization.Providers
                 });
         }
 
+        public MessagePackSerializer(bool callDefaultRegistration)
+        {
+            // test purpose 
+        }
+
         public byte[] Serialize<T>(T obj) => 
             MessagePack.MessagePackSerializer.Serialize(obj);
 
