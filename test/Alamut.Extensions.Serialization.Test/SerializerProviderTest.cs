@@ -7,7 +7,7 @@ namespace Alamut.Extensions.Serialization.Test
     public class SerializerProviderTest
     {
         [Fact]
-        public void SerializerProvider_Init_SetDefaultSerializer()
+        public void SerializerProvider_Init_GetDefaultSerializer()
         {
             // arrange
             var actual = typeof(ISerializer);

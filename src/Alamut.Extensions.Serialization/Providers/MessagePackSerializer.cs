@@ -4,8 +4,7 @@ namespace Alamut.Extensions.Serialization.Providers
 {
     public class MessagePackSerializer : ISerializer
     {
-
-        public MessagePackSerializer()
+        static MessagePackSerializer()
         {
             CompositeResolver.RegisterAndSetAsDefault(
                 new[]
@@ -13,11 +12,6 @@ namespace Alamut.Extensions.Serialization.Providers
                     NativeDateTimeResolver.Instance,
                     ContractlessStandardResolver.Instance
                 });
-        }
-
-        public MessagePackSerializer(bool callDefaultRegistration)
-        {
-            // test purpose 
         }
 
         public byte[] Serialize<T>(T obj) => 
