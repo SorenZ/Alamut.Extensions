@@ -4,3 +4,4 @@ The Dotnet Core extensions for daily use programming API such as Caching, Sessio
 ### Subjects: 
 * [Distributed Caching Extensions](https://github.com/SorenZ/Alamut.Extensions/wiki/Distributed-Cache-Extensions)
 * [Session Extensions](https://github.com/SorenZ/Alamut.Extensions/wiki/Session-Extensions)  
+* [Serialization](https://github.com/SorenZ/Alamut.Extensions/wiki/Serialization)
